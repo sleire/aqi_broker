@@ -1,0 +1,19 @@
+cd ~/kafka_2.11-2.0.0
+
+# start zookeeper
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+# start kafka server
+bin/kafka-server-start.sh config/server.properties
+
+# create example mytopic
+# bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+# list topics
+bin/kafka-topics.sh --list --zookeeper localhost:218
+
+# simple producer example for mytopic
+# bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+
+# simple consumer example for mytopic
+# bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
